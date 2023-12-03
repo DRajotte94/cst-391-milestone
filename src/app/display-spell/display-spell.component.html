@@ -1,0 +1,23 @@
+ <div align="center" style="padding-top: 25px;">
+    <div class="card" style="width: 25rem;">
+        <img class="card-img-top" src="{{spell!.image}}" alt="{{spell!.school}}">
+        <div class="card-body">
+            <h5 class="card-title">{{spell!.name}}</h5>
+            <p class="card-text">{{spell!.description}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>School:</strong> {{spell!.school}}</li>
+            <li class="list-group-item"><strong>Level:</strong> {{spell!.level}}</li>
+            <li class="list-group-item"><strong>Range:</strong> {{spell!.spellRange}}</li>
+            <li class="list-group-item"><strong>Cast Time:</strong> {{spell!.castTime}}</li>
+            <li class="list-group-item"><strong>Duration:</strong> {{spell!.duration}}</li>
+            <li class="list-group-item"><strong>Classes:</strong> {{spell!.classes}}</li>
+            <li class="list-group-item"><strong>Source:</strong> {{spell!.source}}</li>
+        </ul>
+        <div class="card-body">
+            <button type="button" class="btn btn-outline-dark" style="margin:5px" href="#" (click)="return()">Return</button> <!-- Return to spells page -->
+            <button type="button" class="btn btn-outline-dark" style="margin:5px" [routerLink]="['/edit', spell!.spellId]">Edit</button> <!-- Go to edit page for current spell -->
+            <app-delete-spell [spell_id]="spell!.spellId"></app-delete-spell> <!-- Delete currently seleceted spell -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+<div class="list-group" *ngIf="selectedSpell == null">
+    <button class="list-group-item" active *ngFor="let spell of spells" (click)="onSelectSpell(spell)">{{spell.name}}</button>
+</div>
+<div *ngIf="selectedSpell">
+    <app-display-spell [spell]="selectedSpell"></app-display-spell>
+</div>

@@ -1,0 +1,57 @@
+<div align="center" *ngIf="!wasSubmitted" style="padding-top: 25px;">
+    <form (ngSubmit)="onSubmit()" #createForm="ngForm" style="width: 300px">
+        <div class="form-group"> <!-- Spell Name -->
+            <label for="name"><strong>Name</strong></label>
+            <input id="name" type="text" class="form-control" placeholder="Enter the name of the spell" required [(ngModel)]="spell.name" name="name">
+        </div>
+        <div class="form-group"> <!-- Spell School of Magic-->
+            <label for="school"><strong>School of Magic</strong></label>
+            <select class="form-control" id="school" placeholder="Select the name of the spell" required [(ngModel)]="spell.school" name="school">
+                <option>Abjuration</option>
+                <option>Conjuration</option>
+                <option>Divination</option>
+                <option>Enchantment</option>
+                <option>Evocation</option>
+                <option>Illusion</option>
+                <option>Necromancy</option>
+                <option>Transmutation</option>
+            </select>
+        </div>
+        <div class="form-group"> <!-- Spell Cast Time -->
+            <label for="castTime"><strong>Cast Time</strong></label>
+            <input id="castTime" type="text" class="form-control" placeholder="Enter the cast time of the spell" required [(ngModel)]="spell.castTime" name="castTime">
+        </div>
+        <div class="form-group"> <!-- Spell Range -->
+            <label for="spellRange"><strong>Spell Range</strong></label>
+            <input id="spellRange" type="text" class="form-control" placeholder="Enter the range of the spell" required [(ngModel)]="spell.spellRange" name="spellRange">
+        </div>
+        <div class="form-group"> <!-- Spell Duration -->
+            <label for="duration"><strong>Duration</strong></label>
+            <input id="duration" type="text" class="form-control" placeholder="Enter the duration of the spell" required [(ngModel)]="spell.duration" name="duration">
+        </div>
+        <div class="form-group"> <!-- Spell Level -->
+            <label for="level"><strong>Level</strong></label>
+            <input id="level" type="text" class="form-control" placeholder="Enter the level of the spell" required [(ngModel)]="spell.level" name="level">
+        </div>
+        <div class="form-group"> <!-- Spell Classes -->
+            <label for="classes"><strong>Classes</strong></label>
+            <textarea class="form-control" id="source" rows="2" placeholder="Enter the classes that can learn the spell seperated by a comma" [(ngModel)]="spell.classes" name="classes"></textarea>
+        </div>
+        <div class="form-group"> <!-- Spell Source -->
+            <label for="source"><strong>Source Book</strong></label>
+            <input id="source" type="text" class="form-control" placeholder="Enter the source book the spell can be found in" required [(ngModel)]="spell.source" name="source">
+        </div>
+        <div class="form-group"> <!-- Spell Image -->
+            <label for="image"><strong>Image</strong></label>
+            <input id="image" type="text" class="form-control" placeholder="Enter the link for the image of the spell" [(ngModel)]="spell.image" name="image">
+        </div>
+        <div class="form-group"> <!-- Spell Description -->
+            <label for="description"><strong>Description</strong></label>
+            <textarea class="form-control" id="description" rows="3" placeholder="Enter the description of the spell" required [(ngModel)]="spell.description" name="description"></textarea>
+        </div>
+        <button type="submit" class="btn btn-outline-dark" style="margin: 15px;">Submit</button>
+    </form>
+</div>
+<div *ngIf="wasSubmitted">
+    Spell was created successfully.
+</div>
